@@ -1,7 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import axios from "axios";
+//外部套件
+import logo from "./assets/logo.svg";
+import "./assets/App.css";
+import Input from "./components/Input";
+import "./assets/all.scss";
 
 function App() {
+  const [text, setText] = useState("");
+
+  const onChangleHandler = (e) => {
+    setText(e.target.value);
+  };
+
+  useEffect(() => {
+    (async () => {
+      console.log(process.env.REACT_APP_PATH);
+      const result = await axios.get("https://randomuser.me/api/");
+      console.log(result);
+    })();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +36,16 @@ function App() {
         >
           Learn React
         </a>
+        <button type="button" className="btn btn-primary">
+          Primary
+        </button>
+        {text}
+        <Input
+          id="sampleText"
+          text="這是一個Input"
+          value={text}
+          onChangleHandler={onChangleHandler}
+        />
       </header>
     </div>
   );
