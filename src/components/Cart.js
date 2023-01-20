@@ -9,7 +9,7 @@ export default function Cart() {
         <tbody>
           {state.cartList.map((item) => {
             return (
-              <tr>
+              <tr key={item.id}>
                 <td>
                   <a href="#">x</a>
                 </td>
@@ -19,10 +19,30 @@ export default function Cart() {
                 <td>
                   {item.title}
                   <br />
-                  <small className="text-muted">NT $220</small>
+                  <small className="text-muted">NT ${item.price}</small>
                 </td>
                 <td>
-                  <select name="" id="" className="form-select"></select>
+                  <select
+                    name=""
+                    id=""
+                    className="form-select"
+                    value={item.quantity}
+                    onChange={(e) => {
+                      e.preventDefault();
+                      const quantity = parseInt(e.target.value);
+                      dispatch({
+                        type: "CHANGE_CART_QUANTITY",
+                        payload: {
+                          ...item,
+                          quantity,
+                        },
+                      });
+                    }}
+                  >
+                    {[...Array(20)].map((_, i) => {
+                      return <option value={i + 1}>{i + 1}</option>;
+                    })}
+                  </select>
                 </td>
                 <td className="text-end">NT ${item.price * item.quantity}</td>
               </tr>
