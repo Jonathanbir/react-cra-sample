@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import productsDatat from "../assets/productsData";
 import { CartContext } from "../store";
+import productsDatat from "../assets/productsData";
 
 export default function Products() {
   const [state, dispatch] = useContext(CartContext);
@@ -24,7 +24,7 @@ export default function Products() {
                       type: "ADD_TO_CART",
                       payload: {
                         ...product,
-                        qty: 1,
+                        quantity: 1,
                       },
                     });
                   }}
