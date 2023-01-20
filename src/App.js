@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 //外部套件
-import Input from "./components/Input";
+import Navbar from "./components/Navbar";
+import Products from "./components/Products";
+import Cart from "./components/Cart";
 import "./assets/all.scss";
 
 function App() {
@@ -21,163 +23,16 @@ function App() {
 
   return (
     <div className="App">
-      <nav className="navbar bg-body-tertiary">
-        <div className="container-fluid">
-          <span className="navbar-brand">甜點蛋糕店</span>
-          <button
-            className="btn btn-outline-dark position-relative"
-            type="submit"
-          >
-            購物車
-            <span class="badge rounded-pill text-bg-danger position-absolute top-0 start-100 translate-middle">
-              99
-            </span>
-          </button>
-        </div>
-      </nav>
+      <Navbar />
       <div className="container mt-4">
         {/*外層隔線*/}
         <div className="row">
           <div className="col-md-7">
             {/*內層隔線*/}
-            <div className="row row-cols-3 g-3">
-              <div className="col">
-                <div className="card">
-                  <img
-                    src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo="
-                    className="card-img-top"
-                    alt="..."
-                  />
-                  <div className="card-body">
-                    <h6 className="card-title">
-                      全蔬食健康餐 <span className="float-end">$NT 990</span>
-                    </h6>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary  w-100"
-                    >
-                      加入購物車
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card">
-                  <img
-                    src="https://images.unsplash.com/photo-1628540126918-95ac87380159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YW5uaW1hbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
-                    className="card-img-top"
-                    alt="..."
-                  />
-                  <div className="card-body">
-                    <h6 className="card-title">
-                      全蔬食健康餐 <span className="float-end">$NT 990</span>
-                    </h6>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary  w-100"
-                    >
-                      加入購物車
-                    </button>
-                  </div>
-                </div>
-              </div>{" "}
-              <div className="col">
-                <div className="card">
-                  <img
-                    src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo="
-                    className="card-img-top"
-                    alt="..."
-                  />
-                  <div className="card-body">
-                    <h6 className="card-title">
-                      全蔬食健康餐 <span className="float-end">$NT 990</span>
-                    </h6>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary  w-100"
-                    >
-                      加入購物車
-                    </button>
-                  </div>
-                </div>
-              </div>{" "}
-              <div className="col">
-                <div className="card">
-                  <img
-                    src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo="
-                    className="card-img-top"
-                    alt="..."
-                  />
-                  <div className="card-body">
-                    <h6 className="card-title">
-                      全蔬食健康餐 <span className="float-end">$NT 990</span>
-                    </h6>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary  w-100"
-                    >
-                      加入購物車
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card">
-                  <img
-                    src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo="
-                    className="card-img-top"
-                    alt="..."
-                  />
-                  <div className="card-body">
-                    <h6 className="card-title">
-                      全蔬食健康餐 <span className="float-end">$NT 990</span>
-                    </h6>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary  w-100"
-                    >
-                      加入購物車
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Products />
           </div>
           <div className="col-md-5">
-            <div className="bg-light p-3">
-              <table className="table align-middle">
-                <tbody>
-                  <tr>
-                    <td>
-                      <a href="#">x</a>
-                    </td>
-                    <td>
-                      <img
-                        src="https://media.istockphoto.com/id/1361394182/photo/funny-british-shorthair-cat-portrait-looking-shocked-or-surprised.jpg?s=612x612&w=0&k=20&c=6yvVxdufrNvkmc50nCLCd8OFGhoJd6vPTNotl90L-vo="
-                        className="table-image"
-                        alt="..."
-                      />
-                    </td>
-                    <td>
-                      全蔬食健康餐
-                      <br />
-                      <small className="text-muted">NT $220</small>
-                    </td>
-                    <td>
-                      <select name="" id="" className="form-select"></select>
-                    </td>
-                    <td className="text-end">NT $440</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colSpan={5} className="text-end">
-                      總金額 NT $440
-                    </td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
+            <Cart />
           </div>
         </div>
       </div>
