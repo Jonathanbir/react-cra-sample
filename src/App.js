@@ -7,6 +7,7 @@ import Product from "./pages/Product";
 import AlbumLayout from "./components/AlbumLayout";
 import AlbumIndex from "./components/AlbumIndex";
 import AlbumPhoto from "./components/AlbumPhoto";
+import AlbumSearch from "./components/AlbumSearch";
 //外部套件
 import Navbar from "./components/Navbar";
 import "./assets/scss/all.scss";
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/album" element={<AlbumLayout />}>
           <Route index element={<AlbumIndex />}></Route>
+          <Route path="search" element={<AlbumSearch />}></Route>
           <Route path=":id" element={<AlbumPhoto />}></Route>
         </Route>
       </Routes>
