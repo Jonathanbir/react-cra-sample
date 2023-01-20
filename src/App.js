@@ -1,10 +1,11 @@
 import { useReducer } from "react";
 import { CartContext, cartReducer, cartInit } from "./store";
-
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Product from "./pages/Product";
+import { Routes, Route } from "react-router-dom";
 //外部套件
 import Navbar from "./components/Navbar";
-import Products from "./components/Products";
-import Cart from "./components/Cart";
 import "./assets/scss/all.scss";
 
 function App() {
@@ -13,18 +14,15 @@ function App() {
   return (
     <CartContext.Provider value={reducer}>
       <Navbar />
-      <div className="container mt-4">
-        {/*外層隔線*/}
-        <div className="row">
-          <div className="col-md-7">
-            {/*內層隔線*/}
-            <Products />
-          </div>
-          <div className="col-md-5">
-            <Cart />
-          </div>
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/about" element={<About />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/product" element={<Product />}></Route>
+      </Routes>
     </CartContext.Provider>
   );
 }
