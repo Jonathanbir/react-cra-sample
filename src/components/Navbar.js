@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../store";
 
@@ -22,24 +22,63 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" to="/">
+              <NavLink
+                className="nav-link"
+                style={({ isActive }) =>
+                  isActive
+                    ? { color: "rgba(0, 0, 0, 1)" }
+                    : { color: "rgba(0, 0, 0, 0.55)" }
+                }
+                to="/"
+              >
                 首頁
-              </Link>
+              </NavLink>
             </li>
+            {/* <NavLink
+                className={({ isActive }) => {
+                  console.log("isActive", isActive);
+                  return `nav-link ${isActive ? "newClassName" : ""}`;
+                }}
+                to="/about"
+              > */}
             <li className="nav-item">
-              <Link className="nav-link active" to="/about">
+              <NavLink
+                className="nav-link"
+                style={({ isActive }) =>
+                  isActive
+                    ? { color: "rgba(0, 0, 0, 1)" }
+                    : { color: "rgba(0, 0, 0, 0.55)" }
+                }
+                to="/about"
+              >
                 關於我們
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/product">
+              <NavLink
+                className="nav-link"
+                style={({ isActive }) =>
+                  isActive
+                    ? { color: "rgba(0, 0, 0, 1)" }
+                    : { color: "rgba(0, 0, 0, 0.55)" }
+                }
+                to="/product"
+              >
                 商品頁
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/album">
+              <NavLink
+                className="nav-link"
+                style={({ isActive }) =>
+                  isActive
+                    ? { color: "rgba(0, 0, 0, 1)" }
+                    : { color: "rgba(0, 0, 0, 0.55)" }
+                }
+                to="/album"
+              >
                 相簿
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <button
