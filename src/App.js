@@ -8,6 +8,7 @@ import AlbumLayout from "./components/AlbumLayout";
 import AlbumIndex from "./components/AlbumIndex";
 import AlbumPhoto from "./components/AlbumPhoto";
 import AlbumSearch from "./components/AlbumSearch";
+import NotFound from "./pages/NotFound";
 //外部套件
 import Navbar from "./components/Navbar";
 import "./assets/scss/all.scss";
@@ -20,19 +21,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-      </Routes>
-      <Routes>
         <Route path="/about" element={<About />}></Route>
-      </Routes>
-      <Routes>
         <Route path="/product" element={<Product />}></Route>
-      </Routes>
-      <Routes>
         <Route path="/album" element={<AlbumLayout />}>
           <Route index element={<AlbumIndex />}></Route>
           <Route path="search" element={<AlbumSearch />}></Route>
           <Route path=":id" element={<AlbumPhoto />}></Route>
         </Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </CartContext.Provider>
   );

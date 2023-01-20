@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Outlet, Link } from "react-router-dom";
+import List from "./List";
 
 export default function AlbumLayout() {
   const [list, setList] = useState([]);
@@ -25,13 +26,7 @@ export default function AlbumLayout() {
         <p>
           <Link to="search">搜尋頁面</Link>
         </p>
-        {list.map((item) => {
-          return (
-            <li key={item.id}>
-              <Link to={item.id}>{item.id}</Link>
-            </li>
-          );
-        })}
+        <List list={list} />
       </div>
       <div className="col-8">
         <Outlet context={list} />

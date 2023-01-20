@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import List from "./List";
 
 export default function AlbumSearch() {
   const [list, setList] = useState([]);
@@ -46,14 +47,7 @@ export default function AlbumSearch() {
           }
         }}
       />
-      {list.map((item) => {
-        return (
-          <li key={item.id}>
-            {/* */}
-            <Link to={`/album/${item.id}`}>{item.id}</Link>
-          </li>
-        );
-      })}
+      <List list={list} />
     </div>
   );
 }
