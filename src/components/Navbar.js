@@ -36,6 +36,11 @@ export default function Navbar() {
                 商品頁
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link active" to="/album">
+                相簿
+              </Link>
+            </li>
           </ul>
           <button
             className="btn btn-outline-dark position-relative"
