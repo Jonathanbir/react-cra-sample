@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useReducer } from "react";
+import { CartContext } from "./store";
+
 //外部套件
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
@@ -7,22 +8,21 @@ import Cart from "./components/Cart";
 import "./assets/scss/all.scss";
 
 function App() {
-  const [text, setText] = useState("");
-
-  const onChangleHandler = (e) => {
-    setText(e.target.value);
-  };
-
-  useEffect(() => {
-    (async () => {
-      console.log(process.env.REACT_APP_PATH);
-      const result = await axios.get("https://randomuser.me/api/");
-      console.log(result);
-    })();
-  }, []);
+  const cartReducer = useReducer(
+    (state, action) => {
+      console.log(state, action);
+      switch (action) {
+        default:
+          return state;
+      }
+    },
+    {
+      cartList: [],
+    }
+  );
 
   return (
-    <div className="App">
+    <CartContext.Provider value={cartReducer}>
       <Navbar />
       <div className="container mt-4">
         {/*外層隔線*/}
@@ -36,7 +36,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    </CartContext.Provider>
   );
 }
 
