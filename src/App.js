@@ -4,9 +4,9 @@ import { CartContext, cartReducer, cartInit } from "./store";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
-import AlbumLayout from "./pages/AlbumLayout";
-import AlbumIndex from "./pages/AlbumIndex";
-import AlbumPhoto from "./pages/AlbumPhoto";
+import AlbumLayout from "./components/AlbumLayout";
+import AlbumIndex from "./components/AlbumIndex";
+import AlbumPhoto from "./components/AlbumPhoto";
 //外部套件
 import Navbar from "./components/Navbar";
 import "./assets/scss/all.scss";
