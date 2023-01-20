@@ -4,7 +4,7 @@ import axios from "axios";
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
-import "./assets/all.scss";
+import "./assets/scss/all.scss";
 
 function App() {
   const [text, setText] = useState("");

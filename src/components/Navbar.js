@@ -8,7 +8,7 @@ export default function Navbar() {
           type="submit"
         >
           購物車
-          <span class="badge rounded-pill text-bg-danger position-absolute top-0 start-100 translate-middle">
+          <span className="badge rounded-pill text-bg-danger position-absolute top-0 start-100 translate-middle">
             99
           </span>
         </button>
