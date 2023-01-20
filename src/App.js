@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Product from "./pages/Product";
 import AlbumLayout from "./pages/AlbumLayout";
 import AlbumIndex from "./pages/AlbumIndex";
+import AlbumPhoto from "./pages/AlbumPhoto";
 //外部套件
 import Navbar from "./components/Navbar";
 import "./assets/scss/all.scss";
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/album" element={<AlbumLayout />}>
           <Route index element={<AlbumIndex />}></Route>
+          <Route path=":id" element={<AlbumPhoto />}></Route>
         </Route>
       </Routes>
     </CartContext.Provider>

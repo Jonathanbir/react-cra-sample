@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 export default function AlbumLayout() {
   const [list, setList] = useState([]);
@@ -23,7 +23,11 @@ export default function AlbumLayout() {
       <div className="col-4">
         左側選單列表
         {list.map((item) => {
-          return <li key={item.id}>{item.id}</li>;
+          return (
+            <li key={item.id}>
+              <Link to={item.id}>{item.id}</Link>
+            </li>
+          );
         })}
       </div>
       <div className="col-8">
