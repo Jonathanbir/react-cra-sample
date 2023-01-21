@@ -16,8 +16,8 @@ export const cartReducer = (state, action) => {
   const cartList = [...state.cartList];
   // #1 先取得當前購物車目標品項索引
   const index = cartList.findIndex((item) => item.id === action.payload.id);
-  console.log(index);
-  console.log(action);
+  // console.log(index);
+  // console.log(action);
   switch (action.type) {
     case "ADD_TO_CART":
       if (index === -1) {

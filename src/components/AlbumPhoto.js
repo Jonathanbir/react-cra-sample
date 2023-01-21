@@ -12,10 +12,10 @@ export default function AlbumPhoto() {
   useEffect(() => {
     (async () => {
       const response = await axios.get(`${api}/${id}?client_id=${accessId}`);
-      console.log("response", response.data);
+      // console.log("response", response.data);
       setPhoto(response.data);
     })();
-  }, [id]);
+  }, [accessId, id]);
 
   return (
     <div>

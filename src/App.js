@@ -1,14 +1,13 @@
 import { useReducer } from "react";
 import { Routes, Route } from "react-router-dom";
 import { CartContext, cartReducer, cartInit } from "./store";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import { Home, About, NotFound } from "./pages";
 import Product from "./pages/Product";
 import AlbumLayout from "./components/AlbumLayout";
 import AlbumIndex from "./components/AlbumIndex";
 import AlbumPhoto from "./components/AlbumPhoto";
 import AlbumSearch from "./components/AlbumSearch";
-import NotFound from "./pages/NotFound";
+
 //外部套件
 import Navbar from "./components/Navbar";
 import "./assets/scss/all.scss";

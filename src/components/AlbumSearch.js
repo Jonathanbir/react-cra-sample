@@ -23,11 +23,11 @@ export default function AlbumSearch() {
           `${api}?client_id=${accessId}&query=${search}`
         );
         const { results } = response.data;
-        console.log(results);
+        // console.log(results);
         setList(results);
       })();
     }
-  }, [search]);
+  }, [accessId, search]);
 
   useEffect(() => {
     setSearch(searchParams.get("query"));

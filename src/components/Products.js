@@ -3,7 +3,7 @@ import { CartContext } from "../store";
 import productsDatat from "../assets/productsData";
 
 export default function Products() {
-  const [state, dispatch] = useContext(CartContext);
+  const [dispatch] = useContext(CartContext);
   return (
     <div className="row row-cols-3 g-3">
       {productsDatat.map((product) => {

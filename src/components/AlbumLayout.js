@@ -17,7 +17,7 @@ export default function AlbumLayout() {
       //   console.log(results);
       setList(results);
     })();
-  }, []);
+  }, [accessId]);
 
   return (
     <div className="row">
